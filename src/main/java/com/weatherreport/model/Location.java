@@ -32,6 +32,30 @@ public class Location {
         this.admin4 = admin4;
     }
     
+    public String getName() {
+        return name;
+    }
+    
+    public String getCountry() {
+        return country;
+    }
+    
+    public double getElevation() {
+        return elevation;
+    }
+    
+    public double getLatitude() {
+        return latitude;
+    }
+    
+    public double getLongitude() {
+        return longitude;
+    }
+    
+    public String getAdmin1() {
+        return admin1;
+    }
+    
     public String toString() {
         String string = "id : " + id + " nom : " + name + " lat : " + latitude + " lon : " + longitude + " alt : " + elevation + " timezone : " + timezone + " pays : " + country + " ville : " + admin1;
         return string;

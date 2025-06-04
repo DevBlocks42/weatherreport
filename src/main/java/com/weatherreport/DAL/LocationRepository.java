@@ -4,6 +4,8 @@ import com.weatherreport.http.ApiClient;
 import com.weatherreport.http.HttpEntityResponse;
 import com.weatherreport.model.Location;
 import java.io.IOException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.JSONArray;
@@ -23,7 +25,7 @@ public class LocationRepository extends Repository {
     public List<Location> getLocationsLike(String searchTerm) {
         List<Location> locations = new ArrayList<>();
         try {
-            HttpEntityResponse response = super.apiClient.sendGetRequest(super.apiClient.getGeocodingApiURL(), "/search?name=" + searchTerm);
+            HttpEntityResponse response = super.apiClient.sendGetRequest(super.apiClient.getGeocodingApiURL(), "/search?name=" + URLEncoder.encode(searchTerm, StandardCharsets.UTF_8));
             String textResponse = response.getContent();
             if(textResponse.indexOf("[") != -1) {
                 JSONArray jsonArray = new JSONArray(textResponse.substring(textResponse.indexOf("[")));
