@@ -1,6 +1,7 @@
 package com.weatherreport.controller;
 
 import com.weatherreport.DAL.LocationRepository;
+import com.weatherreport.DAL.Repository;
 import com.weatherreport.http.ApiClient;
 import com.weatherreport.model.Location;
 import java.util.List;
@@ -16,6 +17,10 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
+/**
+ * Contrôleur de la fenêtre de recherche par lieux
+ * @author DevBlocks42 <devblocks42 at keemail.me>
+ */
 public class PrimaryController {
     @FXML
     private Button btnSearchLocation;
@@ -26,7 +31,12 @@ public class PrimaryController {
     @FXML
     private TableView<Location> tbvResults;
     
+    private ApiClient apiClient;
+    
+    private LocationRepository locationRepo;
+    
     public void initialize() {
+        locationRepo = new LocationRepository(Repository.getInstance());
         //Lieu/ville
         TableColumn<Location, String> nameCol = new TableColumn<>("Lieu");
         nameCol.setCellValueFactory(cellData -> 
@@ -58,20 +68,17 @@ public class PrimaryController {
             new ReadOnlyStringWrapper(cellData.getValue().getAdmin1())
         );
         tbvResults.getColumns().addAll(nameCol, countryCol, elevationCol, latitudeCol, longitudeCol, admin1Col);
+        tbvResults.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
     }
-    
     
     @FXML
     void onBtnSearchLocation_clicked(ActionEvent event) {
-        
-        if(txfSearchLocation.getText().length() > 3) {
-            ApiClient apiClient = new ApiClient();
-            LocationRepository locationRepo = new LocationRepository(apiClient);
+        if(txfSearchLocation.getText().length() > 3) {          
             List<Location> locations = locationRepo.getLocationsLike(txfSearchLocation.getText());
+            System.out.println(locations.get(0).getCountryCode());
             ObservableList<Location> ol = FXCollections.observableArrayList();
             ol.addAll(locations);
             tbvResults.setItems(ol);
-
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Critère de recherche trop court");

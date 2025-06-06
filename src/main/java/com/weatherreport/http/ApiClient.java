@@ -8,6 +8,10 @@ import org.apache.hc.client5.http.impl.auth.BasicCredentialsProvider;
 import org.apache.hc.client5.http.impl.classic.HttpClients;
 import org.apache.hc.core5.http.io.entity.EntityUtils;
 
+/**
+ * Classe responsable de l'envoie et de la récéption des données vers les API
+ * @author DevBlocks42 <devblocks42 at keemail.me>
+ */
 public class ApiClient {
     private final String geocodingApiURL = PropertiesReader.getProperty("GEOCODING_API_URL");
     private final String openmeteoApiURL = PropertiesReader.getProperty("OPENMETEO_API_URL");
@@ -18,13 +22,20 @@ public class ApiClient {
         httpClient = HttpClients.createDefault();
     }
     
+    
     private HttpGet configureGetRequest(String apiURL, String URI) {
         HttpGet request = new HttpGet(apiURL + URI);
         request.addHeader("accept", "*/*");
-        //request.addHeader("apikey", apiToken);
         return request;
     }
     
+    /**
+     * 
+     * @param apiURL URL de l'API
+     * @param URI Ressource/route à intérroger
+     * @return une HttpEntityResponse correspondant à la réponse reçue
+     * @throws IOException 
+     */
     public HttpEntityResponse sendGetRequest(String apiURL, String URI) throws IOException {
         HttpGet request = configureGetRequest(apiURL, URI);
         HttpEntityResponse entityResponse = httpClient.execute(request, response -> {

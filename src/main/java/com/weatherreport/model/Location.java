@@ -52,6 +52,10 @@ public class Location {
         return longitude;
     }
     
+    public String getCountryCode() {
+        return country_code;
+    }
+    
     public String getAdmin1() {
         return admin1;
     }

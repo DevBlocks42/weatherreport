@@ -11,21 +11,27 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class LocationRepository extends Repository {
+/**
+ * Classe responsable de l'interrogation des données de lieux vers l'API geocoding
+ * @author DevBlocks42 <devblocks42 at keemail.me>
+ */
+public class LocationRepository {
+    private ApiClient apiClient;
     
-    public LocationRepository(ApiClient apiClient) {
-        super.apiClient = apiClient;
+    public LocationRepository(Repository repository) {
+        apiClient = repository.getApiClient();
+        //super.apiClient = apiClient;
     }
     
     /**
-     * Retourne la liste des lieux proche d'un mot clef
+     * Retourne la liste des lieux proches d'un mot clef
      * @param searchTerm
      * @return une List de Location 
      */
     public List<Location> getLocationsLike(String searchTerm) {
         List<Location> locations = new ArrayList<>();
         try {
-            HttpEntityResponse response = super.apiClient.sendGetRequest(super.apiClient.getGeocodingApiURL(), "/search?name=" + URLEncoder.encode(searchTerm, StandardCharsets.UTF_8));
+            HttpEntityResponse response = apiClient.sendGetRequest(apiClient.getGeocodingApiURL(), "/search?name=" + URLEncoder.encode(searchTerm, StandardCharsets.UTF_8) + "&count=20");
             String textResponse = response.getContent();
             if(textResponse.indexOf("[") != -1) {
                 JSONArray jsonArray = new JSONArray(textResponse.substring(textResponse.indexOf("[")));
