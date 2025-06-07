@@ -20,7 +20,6 @@ public class LocationRepository {
     
     public LocationRepository(Repository repository) {
         apiClient = repository.getApiClient();
-        //super.apiClient = apiClient;
     }
     
     /**

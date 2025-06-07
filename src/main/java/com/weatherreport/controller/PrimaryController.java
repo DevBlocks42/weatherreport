@@ -16,6 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 
 /**
  * Contrôleur de la fenêtre de recherche par lieux
@@ -69,13 +70,20 @@ public class PrimaryController {
         );
         tbvResults.getColumns().addAll(nameCol, countryCol, elevationCol, latitudeCol, longitudeCol, admin1Col);
         tbvResults.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+        /*tbvResults.setOnMouseClicked(event -> {
+        if (event.getClickCount() == 2) { 
+            Location location = tbvResults.getSelectionModel().getSelectedItem();
+            if (location != null) {
+                System.out.println("Double-clicked on " + location.getName());
+            }
+        }});*/
+        
     }
     
     @FXML
     void onBtnSearchLocation_clicked(ActionEvent event) {
         if(txfSearchLocation.getText().length() > 3) {          
             List<Location> locations = locationRepo.getLocationsLike(txfSearchLocation.getText());
-            System.out.println(locations.get(0).getCountryCode());
             ObservableList<Location> ol = FXCollections.observableArrayList();
             ol.addAll(locations);
             tbvResults.setItems(ol);
@@ -84,6 +92,16 @@ public class PrimaryController {
             alert.setTitle("Critère de recherche trop court");
             alert.setHeaderText("Vous devez saisir au moins 3 caractères dans la barre de recherche.");
             alert.show();
+        }
+    }
+    
+    @FXML
+    void onLocationItemChanged(MouseEvent event) {
+        if(event.getClickCount() == 2) {
+            Location currentLocation = tbvResults.getSelectionModel().getSelectedItem();
+            if(currentLocation != null) {
+                System.out.println("Double-clicked on " + currentLocation.getName());
+            }
         }
     }
 }
