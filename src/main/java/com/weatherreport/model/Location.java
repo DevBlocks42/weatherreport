@@ -1,5 +1,9 @@
 package com.weatherreport.model;
 
+/**
+ * Classe de représentation des lieux
+ * @author vlsk4
+ */
 public class Location {
     private int id;
     private String name;

@@ -12,7 +12,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**
- * Classe responsable de l'interrogation des données de lieux vers l'API geocoding
+ * Classe responsable de l'accès aux données de lieux via l'API geocoding
  * @author DevBlocks42 <devblocks42 at keemail.me>
  */
 public class LocationRepository {

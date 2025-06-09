@@ -4,6 +4,8 @@ import com.weatherreport.DAL.LocationRepository;
 import com.weatherreport.DAL.Repository;
 import com.weatherreport.http.ApiClient;
 import com.weatherreport.model.Location;
+import com.weatherreport.App;
+import java.io.IOException;
 import java.util.List;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.ReadOnlyStringWrapper;
@@ -70,14 +72,6 @@ public class PrimaryController {
         );
         tbvResults.getColumns().addAll(nameCol, countryCol, elevationCol, latitudeCol, longitudeCol, admin1Col);
         tbvResults.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-        /*tbvResults.setOnMouseClicked(event -> {
-        if (event.getClickCount() == 2) { 
-            Location location = tbvResults.getSelectionModel().getSelectedItem();
-            if (location != null) {
-                System.out.println("Double-clicked on " + location.getName());
-            }
-        }});*/
-        
     }
     
     @FXML
@@ -100,7 +94,13 @@ public class PrimaryController {
         if(event.getClickCount() == 2) {
             Location currentLocation = tbvResults.getSelectionModel().getSelectedItem();
             if(currentLocation != null) {
-                System.out.println("Double-clicked on " + currentLocation.getName());
+                try {
+                    App.setRoot("forecast");
+                    ForecastController forecastController = App.fxmlLoader.<ForecastController>getController();
+                    forecastController.initialize(currentLocation);
+                } catch(IOException ex) {
+                    ex.printStackTrace();
+                }
             }
         }
     }

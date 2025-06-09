@@ -1,8 +1,5 @@
 package com.weatherreport;
 
-import com.weatherreport.DAL.LocationRepository;
-import com.weatherreport.http.ApiClient;
-import com.weatherreport.model.Location;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,7 +14,8 @@ import java.io.IOException;
 public class App extends Application {
 
     private static Scene scene;
-
+    public static FXMLLoader fxmlLoader = new FXMLLoader();
+    
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("primary"), 1024, 700);
@@ -30,7 +28,7 @@ public class App extends Application {
     }
 
     private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
+        fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }
 
