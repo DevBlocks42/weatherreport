@@ -5,6 +5,7 @@ module com.weatherreport {
     requires org.apache.httpcomponents.core5.httpcore5;
     requires org.json;
     requires java.base;
+    requires org.apache.commons.io;
 
     opens com.weatherreport to javafx.fxml, org.apache.httpcomponents.client5.httpclient5, org.apache.httpcomponents.core5.httpcore5;
     opens com.weatherreport.controller to javafx.fxml;

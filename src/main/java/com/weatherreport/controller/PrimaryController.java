@@ -39,6 +39,7 @@ public class PrimaryController {
     private LocationRepository locationRepo;
     
     public void initialize() {
+        tbvResults.getColumns().clear();
         locationRepo = new LocationRepository(Repository.getInstance());
         //Lieu/ville
         TableColumn<Location, String> nameCol = new TableColumn<>("Lieu");

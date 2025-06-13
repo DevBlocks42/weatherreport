@@ -7,6 +7,7 @@ import com.weatherreport.http.HttpEntityResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.scene.image.Image;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -31,9 +32,8 @@ public class ForecastRepository {
     public Forecast getCurrentForecast(Location location) {
         Forecast forecast = new Forecast();
         try {
-            HttpEntityResponse response = apiClient.sendGetRequest(apiClient.getOpenmeteoApiURL(), forecastURI + "?latitude=" + location.getLatitude() + "&longitude=" + location.getLongitude() + "&hourly=temperature_2m,apparent_temperature,precipitation_probability,rain,cloud_cover,wind_speed_10m,weather_code&forecast_days=1");
+            HttpEntityResponse response = apiClient.sendGetRequest(apiClient.getOpenmeteoApiURL(), forecastURI + "?latitude=" + location.getLatitude() + "&longitude=" + location.getLongitude() + "&hourly=temperature_2m,apparent_temperature,precipitation_probability,rain,cloud_cover,wind_speed_10m,weather_code&forecast_days=1&timezone=auto");
             String textResponse = response.getContent();
-            //JSONArray rootArray = new JSONArray(textResponse.substring(textResponse.indexOf("[")));
             JSONObject root = new JSONObject(textResponse);
             JSONObject temp = (JSONObject)root.get("hourly");
             JSONArray apparentTempArray = temp.optJSONArray("apparent_temperature");
@@ -54,6 +54,7 @@ public class ForecastRepository {
                temperatures.add(tempArray.getFloat(i));
                apparent_temperatures.add(apparentTempArray.getFloat(i));
                precipitation_probability.add(precipitationProbArray.getInt(i));
+               rain.add(rainArray.getFloat(i));
                cloud_cover.add(cloudCoverArray.getInt(i));
                wind_speed_10m.add(windSpeedArray.getFloat(i));
                weather_code.add(weatherCodeArray.getInt(i));
