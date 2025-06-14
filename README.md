@@ -22,7 +22,7 @@ Présentation des résultats :
 
 - Tableau 
 
-![Affichage des courbes](imgs/select_table.png)
+![Affichage des courbes](imgs/show_table.png)
 
 - Séléctionner la courbe souhaitée dans la liste déroulante.
 
