@@ -6,6 +6,7 @@ import com.weatherreport.http.ApiClient;
 import com.weatherreport.model.Location;
 import com.weatherreport.App;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.ReadOnlyStringWrapper;
@@ -98,7 +99,8 @@ public class PrimaryController {
                 try {
                     App.setRoot("forecast");
                     ForecastController forecastController = App.fxmlLoader.<ForecastController>getController();
-                    forecastController.initialize(currentLocation);
+                    LocalDate date = LocalDate.now(); // Ajuster en fonction du jour choisi
+                    forecastController.initialize(currentLocation, date);
                 } catch(IOException ex) {
                     ex.printStackTrace();
                 }

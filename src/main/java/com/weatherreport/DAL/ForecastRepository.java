@@ -1,11 +1,13 @@
 package com.weatherreport.DAL;
 
-import com.weatherreport.model.Forecast;
+import com.weatherreport.model.ForecastDay;
 import com.weatherreport.model.Location;
 import com.weatherreport.http.ApiClient;
 import com.weatherreport.http.HttpEntityResponse;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javafx.scene.image.Image;
 import org.json.JSONArray;
@@ -25,14 +27,16 @@ public class ForecastRepository {
     }
     
     /**
-     * Retouurne un Forecast du lieu spécifié en paramètre
+     * Retouurne un ForecastDay du lieu spécifié en paramètre
      * @param location
-     * @return un Forecast
+     * @return un ForecastDay
      */
-    public Forecast getCurrentForecast(Location location) {
-        Forecast forecast = new Forecast();
+    public ForecastDay getCurrentForecast(Location location, LocalDate date) {
+        ForecastDay forecast = new ForecastDay();
         try {
-            HttpEntityResponse response = apiClient.sendGetRequest(apiClient.getOpenmeteoApiURL(), forecastURI + "?latitude=" + location.getLatitude() + "&longitude=" + location.getLongitude() + "&hourly=temperature_2m,apparent_temperature,precipitation_probability,rain,cloud_cover,wind_speed_10m,weather_code&forecast_days=1&timezone=auto");
+            System.out.println(date.toString());
+            //&forecast_days=1
+            HttpEntityResponse response = apiClient.sendGetRequest(apiClient.getOpenmeteoApiURL(), forecastURI + "?latitude=" + location.getLatitude() + "&longitude=" + location.getLongitude() + "&hourly=temperature_2m,apparent_temperature,precipitation_probability,rain,cloud_cover,wind_speed_10m,weather_code&timezone=auto&start_date=" + date.toString() + "&end_date=" + date.toString());
             String textResponse = response.getContent();
             JSONObject root = new JSONObject(textResponse);
             JSONObject temp = (JSONObject)root.get("hourly");
@@ -59,7 +63,7 @@ public class ForecastRepository {
                wind_speed_10m.add(windSpeedArray.getFloat(i));
                weather_code.add(weatherCodeArray.getInt(i));
             }
-            forecast = new Forecast(location, temperatures, apparent_temperatures, precipitation_probability, rain, cloud_cover, wind_speed_10m, weather_code);
+            forecast = new ForecastDay(location, temperatures, apparent_temperatures, precipitation_probability, rain, cloud_cover, wind_speed_10m, weather_code);
         } catch(IOException ex) {
             ex.printStackTrace();
         }

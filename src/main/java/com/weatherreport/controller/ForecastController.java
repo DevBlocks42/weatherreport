@@ -5,10 +5,12 @@ import com.weatherreport.DAL.ForecastRepository;
 import com.weatherreport.DAL.Repository;
 import com.weatherreport.DAL.WeatherIconRepository;
 import com.weatherreport.model.Location;
-import com.weatherreport.model.Forecast;
+import com.weatherreport.model.ForecastDay;
 import com.weatherreport.model.ForecastRow;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Date;
 import java.util.List;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
@@ -37,9 +39,10 @@ import javafx.scene.layout.AnchorPane;
  */
 public class ForecastController {
     private Location location;
+    private LocalDate forecastDay;
     private ForecastRepository forecastRepo; 
     private WeatherIconRepository weatherIconRepo;
-    private Forecast forecast;
+    private ForecastDay forecast;
     private LineChart<?, ?> temperatureChart;
     private LineChart<?, ?> apparentTemperatureChart;
     private LineChart<?, ?> rainChart;
@@ -62,11 +65,12 @@ public class ForecastController {
     @FXML
     private Button btnBack;
     
-    public void initialize(Location location) {
+    public void initialize(Location location, LocalDate date) {
         this.location = location; 
+        this.forecastDay = date;
         forecastRepo = new ForecastRepository(Repository.getInstance());
         weatherIconRepo = new WeatherIconRepository(Repository.getInstance());
-        forecast = forecastRepo.getCurrentForecast(location);
+        forecast = forecastRepo.getCurrentForecast(location, date);
         lblTitle.setText("Météo de " + location.getName() + ", aujourd'hui.");
         initializeCharts();
         initializeTable();
@@ -120,10 +124,11 @@ public class ForecastController {
         });
         weatherCodeColumn.setCellFactory(col -> new TableCell<>() { 
             private final ImageView imgView = new ImageView();
-                    
+            
             @Override 
             protected void updateItem(Image item, boolean empty) {
                 super.updateItem(item, empty);
+                //imgView.setX(imgView.getX() + 75);
                 if(empty || item == null) {
                     imgView.setImage(null);
                     setGraphic(null);

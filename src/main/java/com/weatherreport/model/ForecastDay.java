@@ -9,7 +9,7 @@ import java.util.List;
  * Classe de représentation de la météo en temps réel
  * @author DevBlocks42 <devblocks42 at keemail.me>
  */
-public class Forecast {
+public class ForecastDay {
     private Location location = null;
     private List<Float> temperatures;
     private List<Float> apparent_temperatures;
@@ -20,7 +20,7 @@ public class Forecast {
     private List<Integer> weather_code;
     private List<LocalTime> dailyClock = new ArrayList<>();
     
-    public Forecast(Location location, List<Float> temperatures, List<Float> apparent_temperatures, List<Integer> precipitation_probability, List<Float> rain, List<Integer> cloud_cover, List<Float> wind_speed_10m, List<Integer> weather_code) {
+    public ForecastDay(Location location, List<Float> temperatures, List<Float> apparent_temperatures, List<Integer> precipitation_probability, List<Float> rain, List<Integer> cloud_cover, List<Float> wind_speed_10m, List<Integer> weather_code) {
         this.location = location;
         this.temperatures = temperatures;
         this.apparent_temperatures = apparent_temperatures;
@@ -36,7 +36,7 @@ public class Forecast {
         }
     }
     
-    public Forecast() {
+    public ForecastDay() {
     }
     
     public List<Float> getTemperatures() {
