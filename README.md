@@ -8,9 +8,14 @@ WeatherReport est un programme client écrit en Java avec JavaFX permettant de c
 
 Recherche d'un lieu par mot clef 
 
-
 - Saisir un nom de ville dans la zone de recherche puis cliquer sur le bouton "rechercher".
 
-- Afficher la météo du jour heure par heure
+![Recherche par lieux](imgs/search_location.png)
 
-- Afficher des courbes
+Afficher la météo du jour heure par heure
+
+- Double clic sur un lieu dans le tableau
+
+Afficher des courbes
+
+- Séléctionner la courbe souhaitée dans la liste déroulante.
