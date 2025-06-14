@@ -6,7 +6,7 @@ import javafx.beans.property.SimpleObjectProperty;
 
 /**
  * Classe représentant la météo d'une heure
- * @author DevBlocks42 <devblocks42 at keemail.me>
+ * @author DevBlocks42 
  */
 public class ForecastRow {
     private ObjectProperty<LocalTime> hour;

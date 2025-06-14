@@ -4,7 +4,7 @@ import javafx.scene.image.Image;
 
 /**
  * Classe représentant une icone météo 
- * @author DevBlocks42 <devblocks42 at keemail.me>
+ * @author DevBlocks42
  */
 public class WeatherIcon {
     private int weather_code;

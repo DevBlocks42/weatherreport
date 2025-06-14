@@ -13,7 +13,7 @@ import org.json.JSONObject;
 
 /**
  * Classe responsable de l'accès aux données de lieux via l'API geocoding
- * @author DevBlocks42 <devblocks42 at keemail.me>
+ * @author DevBlocks42 
  */
 public class LocationRepository {
     private ApiClient apiClient;

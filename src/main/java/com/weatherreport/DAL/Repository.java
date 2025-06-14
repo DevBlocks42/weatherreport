@@ -2,6 +2,10 @@ package com.weatherreport.DAL;
 
 import com.weatherreport.http.ApiClient;
 
+/**
+ * Singleton : classe de base pour les dépôts 
+ * @author DevBlocks42 
+ */
 public class Repository {
     protected static Repository instance = null;
     private ApiClient apiClient;

@@ -1,12 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.weatherreport.http;
 
 /**
- *
- * @author DevBlocks42 <devblocks42 at keemail.me>
+ * Classe de représentation des données brutes du corps des réponses reçues des API (utile pour télécharger des binaires)
+ * @author DevBlocks42 
  */
 public class HttpBytesEntityResponse {
     private int status;

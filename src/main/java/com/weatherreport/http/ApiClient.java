@@ -9,7 +9,7 @@ import org.apache.hc.core5.http.io.entity.EntityUtils;
 
 /**
  * Classe responsable de l'envoie et de la récéption des données vers les API
- * @author DevBlocks42 <devblocks42 at keemail.me>
+ * @author DevBlocks42
  */
 public class ApiClient {
     private final String geocodingApiURL = PropertiesReader.getProperty("GEOCODING_API_URL");

@@ -2,20 +2,16 @@ package com.weatherreport.DAL;
 
 import com.weatherreport.http.ApiClient;
 import com.weatherreport.http.HttpBytesEntityResponse;
-import com.weatherreport.http.HttpEntityResponse;
 import com.weatherreport.model.WeatherIcon;
 import com.weatherreport.utils.WeatherCodeConverter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import javafx.scene.image.Image;
-import org.apache.hc.core5.http.HttpEntity;
-import org.apache.hc.core5.http.io.entity.EntityUtils;
 
 /**
  * Classe responsable de l'accès aux descriptions et icones météo via l'API openweathermap
- * @author DevBlocks42 <devblocks42 at keemail.me>
+ * @author DevBlocks42 
  */
 public class WeatherIconRepository {
     private ApiClient apiClient;

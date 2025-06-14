@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * Classe de représentation de la météo en temps réel
- * @author DevBlocks42 <devblocks42 at keemail.me>
+ * @author DevBlocks42
  */
 public class ForecastDay {
     private Location location = null;

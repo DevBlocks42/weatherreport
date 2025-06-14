@@ -15,7 +15,7 @@ import org.json.JSONObject;
 
 /**
  * Classe responsable de l'accès aux données météorologiques du jour via l'API open-meteo
- * @author DevBlocks42 <devblocks42 at keemail.me>
+ * @author DevBlocks42
  */
 public class ForecastRepository {
     

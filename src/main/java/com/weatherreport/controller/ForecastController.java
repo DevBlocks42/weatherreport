@@ -10,7 +10,6 @@ import com.weatherreport.model.ForecastRow;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Date;
 import java.util.List;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
@@ -35,7 +34,7 @@ import javafx.scene.layout.AnchorPane;
 
 /**
  * Contrôleur de la fenêtre de météo en temps réel pour un lieu
- * @author DevBlocks42 <devblocks42 at keemail.me>
+ * @author DevBlocks42 
  */
 public class ForecastController {
     private Location location;

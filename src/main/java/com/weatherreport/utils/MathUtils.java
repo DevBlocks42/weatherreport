@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  * Classe contenant des méthodes auxilliaires pour des opérations mathématiques
- * @author DevBlocks42 <devblocks42 at keemail.me>
+ * @author DevBlocks42
  */
 public class MathUtils {
     

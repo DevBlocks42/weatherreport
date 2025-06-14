@@ -2,7 +2,7 @@ package com.weatherreport.model;
 
 /**
  * Classe de représentation des lieux
- * @author vlsk4
+ * @author DevBlocks42
  */
 public class Location {
     private int id;

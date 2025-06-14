@@ -23,7 +23,7 @@ import javafx.scene.input.MouseEvent;
 
 /**
  * Contrôleur de la fenêtre de recherche par lieux
- * @author DevBlocks42 <devblocks42 at keemail.me>
+ * @author DevBlocks42 
  */
 public class PrimaryController {
     @FXML

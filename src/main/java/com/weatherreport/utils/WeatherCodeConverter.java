@@ -2,14 +2,13 @@ package com.weatherreport.utils;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.json.JSONObject;
 import org.apache.commons.io.IOUtils;
 
 /**
  * Classe utilitaire permettant de convertir un weather_code retourné par open-meteo en code WMO
- * @author DevBlocks42 <devblocks42 at keemail.me>
+ * @author DevBlocks42 
  */
 public class WeatherCodeConverter {
     private static final String weatherCodeFilePath = "src/main/resources/com/weatherreport/wmo_translated_fr.json";
