@@ -9,7 +9,7 @@
 
 <AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.weatherreport.controller.ForecastController">
    <children>
-      <TableView fx:id="tbvMeteo" layoutX="92.0" layoutY="89.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0" />
+      <TableView fx:id="tbvMeteo" cache="true" cacheHint="SPEED" layoutX="92.0" layoutY="89.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0" />
       <Label fx:id="lblTitle" layoutX="39.0" layoutY="6.0" text="Météo de XXXXXX, le XX/XX/XXXX" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <MenuButton fx:id="mnbShowGraphs" layoutX="242.0" layoutY="334.0" mnemonicParsing="false" text="Affichage" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0">
         <items>

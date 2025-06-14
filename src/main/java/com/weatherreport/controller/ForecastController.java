@@ -127,14 +127,13 @@ public class ForecastController {
             @Override 
             protected void updateItem(Image item, boolean empty) {
                 super.updateItem(item, empty);
-                //imgView.setX(imgView.getX() + 75);
                 if(empty || item == null) {
                     imgView.setImage(null);
                     setGraphic(null);
                 } else {
                     imgView.setImage(item);
-                    imgView.setFitHeight(50);
-                    imgView.setFitWidth(50);
+                    imgView.setFitHeight(32);
+                    imgView.setFitWidth(32);
                     setGraphic(imgView);
                 }
             }

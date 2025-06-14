@@ -15,7 +15,6 @@ public class HttpBytesEntityResponse {
     
     public byte[] getContent() {
         return this.content;
-    }   
-    
+    }    
 }
 

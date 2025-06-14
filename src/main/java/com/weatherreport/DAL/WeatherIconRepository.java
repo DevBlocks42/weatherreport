@@ -35,7 +35,13 @@ public class WeatherIconRepository {
         try {
             response = apiClient.sendGetRequestToBytes(apiClient.getOpenweatherApiURL(), "/" + WMOCode);
             byte[] bytes = response.getContent();
-            String tmpPath = "/tmp/wmoicon_" + WMOCode;
+            String tmpPath = "";
+            String osName = System.getProperty("os.name").toLowerCase();
+            if(osName.contains("win")) {
+                tmpPath = System.getenv("TEMP") + WMOCode;
+            } else {
+                tmpPath = "/tmp/wmoicon_" + WMOCode;
+            }
             File file = new File(tmpPath);
             FileOutputStream fos = new FileOutputStream(file);
             fos.write(bytes);
