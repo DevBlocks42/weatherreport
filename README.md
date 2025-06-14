@@ -16,6 +16,8 @@ Afficher la météo du jour heure par heure
 
 - Double clic sur un lieu dans le tableau
 
+![Recherche par lieux](imgs/select_location.png)
+
 Afficher des courbes
 
 - Séléctionner la courbe souhaitée dans la liste déroulante.
