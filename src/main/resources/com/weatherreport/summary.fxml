@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.weatherreport.controller.SummaryController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Synthèse des prévisions de la semaine pour XXXXXXXXXXX" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
+      <HBox layoutX="200.0" layoutY="150.0" prefHeight="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
+         <children>
+            <AnchorPane fx:id="day1AnchorPane">
+               <children>
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="85.0" text="Max : 25°C" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Label alignment="CENTER" layoutY="16.0" prefHeight="17.0" prefWidth="85.0" text="Min : 25°C" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="17.0" />
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="26.0" prefWidth="85.0" text="Lever du soleil : 5h55" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="34.0" />
+                  <Label alignment="CENTER" layoutX="20.0" layoutY="36.0" prefWidth="85.0" text="Coucher du soleil : 21h35" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="64.0" />
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="100.0">
+                     <image>
+                        <Image url="@../../../../../../../Pictures/32329.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="day2AnchorPane">
+               <children>
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="85.0" text="Max : 25°C" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Label alignment="CENTER" layoutY="16.0" prefHeight="17.0" prefWidth="85.0" text="Min : 25°C" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="17.0" />
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="26.0" prefWidth="85.0" text="Lever du soleil : 5h55" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="34.0" />
+                  <Label alignment="CENTER" layoutX="20.0" layoutY="36.0" prefWidth="85.0" text="Coucher du soleil : 21h35" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="64.0" />
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="100.0">
+                     <image>
+                        <Image url="@../../../../../../../Pictures/32329.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="day3AnchorPane">
+               <children>
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="85.0" text="Max : 25°C" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Label alignment="CENTER" layoutY="16.0" prefHeight="17.0" prefWidth="85.0" text="Min : 25°C" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="17.0" />
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="26.0" prefWidth="85.0" text="Lever du soleil : 5h55" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="34.0" />
+                  <Label alignment="CENTER" layoutX="20.0" layoutY="36.0" prefWidth="85.0" text="Coucher du soleil : 21h35" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="64.0" />
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="100.0">
+                     <image>
+                        <Image url="@../../../../../../../Pictures/32329.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="day4AnchorPane">
+               <children>
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="85.0" text="Max : 25°C" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Label alignment="CENTER" layoutY="16.0" prefHeight="17.0" prefWidth="85.0" text="Min : 25°C" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="17.0" />
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="26.0" prefWidth="85.0" text="Lever du soleil : 5h55" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="34.0" />
+                  <Label alignment="CENTER" layoutX="20.0" layoutY="36.0" prefWidth="85.0" text="Coucher du soleil : 21h35" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="64.0" />
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="100.0">
+                     <image>
+                        <Image url="@../../../../../../../Pictures/32329.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="day5AnchorPane">
+               <children>
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="85.0" text="Max : 25°C" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Label alignment="CENTER" layoutY="16.0" prefHeight="17.0" prefWidth="85.0" text="Min : 25°C" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="17.0" />
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="26.0" prefWidth="85.0" text="Lever du soleil : 5h55" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="34.0" />
+                  <Label alignment="CENTER" layoutX="20.0" layoutY="36.0" prefWidth="85.0" text="Coucher du soleil : 21h35" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="64.0" />
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="100.0">
+                     <image>
+                        <Image url="@../../../../../../../Pictures/32329.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="day6AnchorPane">
+               <children>
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="85.0" text="Max : 25°C" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Label alignment="CENTER" layoutY="16.0" prefHeight="17.0" prefWidth="85.0" text="Min : 25°C" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="17.0" />
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="26.0" prefWidth="85.0" text="Lever du soleil : 5h55" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="34.0" />
+                  <Label alignment="CENTER" layoutX="20.0" layoutY="36.0" prefWidth="85.0" text="Coucher du soleil : 21h35" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="64.0" />
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="100.0">
+                     <image>
+                        <Image url="@../../../../../../../Pictures/32329.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="day7AnchorPane">
+               <children>
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="85.0" text="Max : 25°C" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Label alignment="CENTER" layoutY="16.0" prefHeight="17.0" prefWidth="85.0" text="Min : 25°C" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="17.0" />
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="26.0" prefWidth="85.0" text="Lever du soleil : 5h55" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="34.0" />
+                  <Label alignment="CENTER" layoutX="20.0" layoutY="36.0" prefWidth="85.0" text="Coucher du soleil : 21h35" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="64.0" />
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="100.0">
+                     <image>
+                        <Image url="@../../../../../../../Pictures/32329.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

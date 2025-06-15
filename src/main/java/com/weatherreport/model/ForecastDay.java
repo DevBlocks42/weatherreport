@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Classe de représentation de la météo en temps réel
+ * Classe de représentation de la météo heure par heure.
  * @author DevBlocks42
  */
 public class ForecastDay {
