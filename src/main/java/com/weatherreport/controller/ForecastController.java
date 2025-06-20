@@ -132,6 +132,7 @@ public class ForecastController {
                     setGraphic(null);
                 } else {
                     imgView.setImage(item);
+                    
                     imgView.setFitHeight(32);
                     imgView.setFitWidth(32);
                     setGraphic(imgView);

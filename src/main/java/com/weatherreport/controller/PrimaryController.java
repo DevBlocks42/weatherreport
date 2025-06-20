@@ -97,10 +97,11 @@ public class PrimaryController {
             Location currentLocation = tbvResults.getSelectionModel().getSelectedItem();
             if(currentLocation != null) {
                 try {
-                    //App.setRoot("forecast");
-                    //ForecastController forecastController = App.fxmlLoader.<ForecastController>getController();
-                    //LocalDate date = LocalDate.now(); // Ajuster en fonction du jour choisi
-                    //forecastController.initialize(currentLocation, date);
+                    /*App.setRoot("forecast");
+                    ForecastController forecastController = App.fxmlLoader.<ForecastController>getController();
+                    LocalDate date = LocalDate.now(); // Ajuster en fonction du jour choisi
+                    forecastController.initialize(currentLocation, date);*/
+                    //
                     App.setRoot("summary");
                     SummaryController controller = App.fxmlLoader.<SummaryController>getController();
                     controller.initialize(currentLocation);

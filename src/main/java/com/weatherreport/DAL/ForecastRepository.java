@@ -4,6 +4,7 @@ import com.weatherreport.model.ForecastDay;
 import com.weatherreport.model.Location;
 import com.weatherreport.http.ApiClient;
 import com.weatherreport.http.HttpEntityResponse;
+import com.weatherreport.model.ForecastDaySum;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -68,5 +69,32 @@ public class ForecastRepository {
             ex.printStackTrace();
         }
         return forecast;
+    }
+    
+    public List<ForecastDaySum> getForecastDaySum(Location location, LocalDate startDate, LocalDate endDate) {
+        List<ForecastDaySum> sums = new ArrayList<>();
+        try {
+            HttpEntityResponse response = apiClient.sendGetRequest(apiClient.getOpenmeteoApiURL(), forecastURI + "?latitude=" + location.getLatitude() + "&longitude=" + location.getLongitude() + "&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset&timezone=auto&start_date=" + startDate.toString() + "&end_date=" + endDate.toString());
+            String textResponse = response.getContent();
+            JSONObject root = new JSONObject(textResponse);
+            JSONObject daily = (JSONObject)root.get("daily");
+            JSONArray dailyMinTempsArray = daily.optJSONArray("temperature_2m_min");
+            JSONArray dailyMaxTempsArray = daily.optJSONArray("temperature_2m_max");
+            JSONArray dailyWeatherCodesArray = daily.optJSONArray("weather_code");
+            JSONArray dailySunsetsArray = daily.optJSONArray("sunset");
+            JSONArray dailySunrisesArray = daily.optJSONArray("sunrise");
+            for(int i = 0; i < dailyMinTempsArray.length(); i++) {
+                LocalDate sunrise = LocalDate.parse(dailySunrisesArray.get(i).toString());
+                LocalDate sunset = LocalDate.parse(dailySunsetsArray.get(i).toString());
+                Float maxTemp = dailyMaxTempsArray.getFloat(i);
+                Float minTemp = dailyMinTempsArray.getFloat(i);
+                int weatherCode = dailyWeatherCodesArray.getInt(i);
+                ForecastDaySum forecastDaySum = new ForecastDaySum(location, weatherCode, sunrise, sunset, maxTemp, minTemp);
+                sums.add(forecastDaySum);
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        return sums;
     }
 }
