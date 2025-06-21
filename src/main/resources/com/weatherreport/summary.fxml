@@ -12,22 +12,27 @@
 
 <AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.weatherreport.controller.SummaryController">
    <children>
-      <Label layoutX="14.0" layoutY="14.0" text="Synthèse des prévisions de la semaine pour XXXXXXXXXXX" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
+      <Label fx:id="lblTitle" layoutX="14.0" layoutY="14.0" text="Synthèse des prévisions de la semaine pour " AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
       <HBox layoutX="200.0" layoutY="150.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: grey;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
          <children>
             <AnchorPane fx:id="day1AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
                <children>
                   <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Label contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Max : 25°C" wrapText="true" VBox.vgrow="ALWAYS">
+                        <Label id="day" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Jour : " wrapText="true" VBox.vgrow="ALWAYS">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Label>
-                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Min : 25°C" wrapText="true" VBox.vgrow="ALWAYS" />
-                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Lever du soleil : 5h55" textAlignment="CENTER" wrapText="true" VBox.vgrow="ALWAYS" />
-                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Coucher du soleil : 21h35" wrapText="true" VBox.vgrow="ALWAYS" />
-                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="NEVER">
+                        <Label id="maxTemp" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Max : " wrapText="true" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <Label id="minTemp" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Min : " wrapText="true" VBox.vgrow="ALWAYS" />
+                        <Label id="sunrise" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Lever du soleil : " textAlignment="CENTER" wrapText="true" VBox.vgrow="ALWAYS" />
+                        <Label id="sunset" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Coucher du soleil : " wrapText="true" VBox.vgrow="ALWAYS" />
+                        <ImageView id="weatherIcon" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="NEVER">
                            <image>
                               <Image url="@../../../../../../../../../../tmp/wmoicon_01d@2x.png" />
                            </image>
@@ -46,14 +51,19 @@
                <children>
                   <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Label contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Max : 25°C" wrapText="true" VBox.vgrow="ALWAYS">
+                        <Label id="day" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Jour : " wrapText="true" VBox.vgrow="ALWAYS">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Label>
-                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Min : 25°C" wrapText="true" VBox.vgrow="ALWAYS" />
-                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Lever du soleil : 5h55" textAlignment="CENTER" wrapText="true" VBox.vgrow="ALWAYS" />
-                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Coucher du soleil : 21h35" wrapText="true" VBox.vgrow="ALWAYS" />
+                        <Label id="maxTemp" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Max : " wrapText="true" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <Label id="minTemp" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Min : " wrapText="true" VBox.vgrow="ALWAYS" />
+                        <Label id="sunrise" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Lever du soleil : " textAlignment="CENTER" wrapText="true" VBox.vgrow="ALWAYS" />
+                        <Label id="sunset" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Coucher du soleil : " wrapText="true" VBox.vgrow="ALWAYS" />
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../../../../../../tmp/wmoicon_01d@2x.png" />
@@ -73,14 +83,19 @@
                <children>
                   <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Label contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Max : 25°C" wrapText="true" VBox.vgrow="ALWAYS">
+                        <Label id="day" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Jour : " wrapText="true" VBox.vgrow="ALWAYS">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Label>
-                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Min : 25°C" wrapText="true" VBox.vgrow="ALWAYS" />
-                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Lever du soleil : 5h55" textAlignment="CENTER" wrapText="true" VBox.vgrow="ALWAYS" />
-                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Coucher du soleil : 21h35" wrapText="true" VBox.vgrow="ALWAYS" />
+                        <Label id="maxTemp" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Max : " wrapText="true" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <Label id="minTemp" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Min : " wrapText="true" VBox.vgrow="ALWAYS" />
+                        <Label id="sunrise" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Lever du soleil : " textAlignment="CENTER" wrapText="true" VBox.vgrow="ALWAYS" />
+                        <Label id="sunset" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Coucher du soleil : " wrapText="true" VBox.vgrow="ALWAYS" />
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../../../../../../tmp/wmoicon_01d@2x.png" />
@@ -100,14 +115,19 @@
                <children>
                   <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Label contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Max : 25°C" wrapText="true" VBox.vgrow="ALWAYS">
+                        <Label id="day" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Jour : " wrapText="true">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Label>
-                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Min : 25°C" wrapText="true" VBox.vgrow="ALWAYS" />
-                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Lever du soleil : 5h55" textAlignment="CENTER" wrapText="true" VBox.vgrow="ALWAYS" />
-                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Coucher du soleil : 21h35" wrapText="true" VBox.vgrow="ALWAYS" />
+                        <Label id="maxTemp" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Max : " wrapText="true" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <Label id="minTemp" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Min : " wrapText="true" VBox.vgrow="ALWAYS" />
+                        <Label id="sunrise" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Lever du soleil : " textAlignment="CENTER" wrapText="true" VBox.vgrow="ALWAYS" />
+                        <Label id="sunset" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Coucher du soleil : " wrapText="true" VBox.vgrow="ALWAYS" />
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../../../../../../tmp/wmoicon_01d@2x.png" />
@@ -127,14 +147,19 @@
                <children>
                   <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Label contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Max : 25°C" wrapText="true" VBox.vgrow="ALWAYS">
+                        <Label id="day" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Jour : " wrapText="true">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Label>
-                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Min : 25°C" wrapText="true" VBox.vgrow="ALWAYS" />
-                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Lever du soleil : 5h55" textAlignment="CENTER" wrapText="true" VBox.vgrow="ALWAYS" />
-                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Coucher du soleil : 21h35" wrapText="true" VBox.vgrow="ALWAYS" />
+                        <Label id="maxTemp" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Max : " wrapText="true" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <Label id="minTemp" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Min : " wrapText="true" VBox.vgrow="ALWAYS" />
+                        <Label id="sunrise" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Lever du soleil : " textAlignment="CENTER" wrapText="true" VBox.vgrow="ALWAYS" />
+                        <Label id="sunset" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Coucher du soleil : " wrapText="true" VBox.vgrow="ALWAYS" />
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../../../../../../tmp/wmoicon_01d@2x.png" />
@@ -154,14 +179,19 @@
                <children>
                   <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Label contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Max : 25°C" wrapText="true" VBox.vgrow="ALWAYS">
+                        <Label id="day" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Jour : " wrapText="true">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Label>
-                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Min : 25°C" wrapText="true" VBox.vgrow="ALWAYS" />
-                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Lever du soleil : 5h55" textAlignment="CENTER" wrapText="true" VBox.vgrow="ALWAYS" />
-                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Coucher du soleil : 21h35" wrapText="true" VBox.vgrow="ALWAYS" />
+                        <Label id="maxTemp" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Max : " wrapText="true" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <Label id="minTemp" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Min : " wrapText="true" VBox.vgrow="ALWAYS" />
+                        <Label id="sunrise" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Lever du soleil : " textAlignment="CENTER" wrapText="true" VBox.vgrow="ALWAYS" />
+                        <Label id="sunset" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Coucher du soleil : " wrapText="true" VBox.vgrow="ALWAYS" />
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../../../../../../tmp/wmoicon_01d@2x.png" />
@@ -181,14 +211,19 @@
                <children>
                   <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Label contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Max : 25°C" wrapText="true" VBox.vgrow="ALWAYS">
+                        <Label id="day" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Jour : " wrapText="true">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Label>
-                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Min : 25°C" wrapText="true" VBox.vgrow="ALWAYS" />
-                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Lever du soleil : 5h55" textAlignment="CENTER" wrapText="true" VBox.vgrow="ALWAYS" />
-                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Coucher du soleil : 21h35" wrapText="true" VBox.vgrow="ALWAYS" />
+                        <Label id="maxTemp" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Max : " wrapText="true" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <Label id="minTemp" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Min : " wrapText="true" VBox.vgrow="ALWAYS" />
+                        <Label id="sunrise" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Lever du soleil : " textAlignment="CENTER" wrapText="true" VBox.vgrow="ALWAYS" />
+                        <Label id="sunset" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Coucher du soleil : " wrapText="true" VBox.vgrow="ALWAYS" />
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../../../../../../tmp/wmoicon_01d@2x.png" />

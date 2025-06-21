@@ -7,6 +7,8 @@ import com.weatherreport.http.HttpEntityResponse;
 import com.weatherreport.model.ForecastDaySum;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -83,9 +85,11 @@ public class ForecastRepository {
             JSONArray dailyWeatherCodesArray = daily.optJSONArray("weather_code");
             JSONArray dailySunsetsArray = daily.optJSONArray("sunset");
             JSONArray dailySunrisesArray = daily.optJSONArray("sunrise");
+            String datePattern = "yyyy-MM-dd'T'HH:mm";
             for(int i = 0; i < dailyMinTempsArray.length(); i++) {
-                LocalDate sunrise = LocalDate.parse(dailySunrisesArray.get(i).toString());
-                LocalDate sunset = LocalDate.parse(dailySunsetsArray.get(i).toString());
+                
+                LocalDateTime sunrise = LocalDateTime.parse(dailySunrisesArray.get(i).toString(), DateTimeFormatter.ofPattern(datePattern));
+                LocalDateTime sunset = LocalDateTime.parse(dailySunsetsArray.get(i).toString(), DateTimeFormatter.ofPattern(datePattern));
                 Float maxTemp = dailyMaxTempsArray.getFloat(i);
                 Float minTemp = dailyMinTempsArray.getFloat(i);
                 int weatherCode = dailyWeatherCodesArray.getInt(i);
