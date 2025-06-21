@@ -70,7 +70,7 @@ public class ForecastController {
         forecastRepo = new ForecastRepository(Repository.getInstance());
         weatherIconRepo = new WeatherIconRepository(Repository.getInstance());
         forecast = forecastRepo.getCurrentForecast(location, date);
-        lblTitle.setText("Météo de " + location.getName() + ", aujourd'hui.");
+        lblTitle.setText("Météo de " + location.getName() + ", le " + date.toString());
         initializeCharts();
         initializeTable();
     }

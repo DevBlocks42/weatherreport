@@ -37,7 +37,7 @@
                               <Image url="@../../../../../../../../../../tmp/wmoicon_01d@2x.png" />
                            </image>
                         </ImageView>
-                        <Button mnemonicParsing="false" text="Détails">
+                        <Button id="1" mnemonicParsing="false" onAction="#btnShowDetails" text="Détails">
                            <VBox.margin>
                               <Insets bottom="10.0" />
                            </VBox.margin>
@@ -69,7 +69,7 @@
                               <Image url="@../../../../../../../../../../tmp/wmoicon_01d@2x.png" />
                            </image>
                         </ImageView>
-                        <Button mnemonicParsing="false" text="Détails">
+                        <Button id="2" mnemonicParsing="false" onAction="#btnShowDetails" text="Détails">
                            <VBox.margin>
                               <Insets bottom="10.0" />
                            </VBox.margin>
@@ -101,7 +101,7 @@
                               <Image url="@../../../../../../../../../../tmp/wmoicon_01d@2x.png" />
                            </image>
                         </ImageView>
-                        <Button mnemonicParsing="false" text="Détails">
+                        <Button id="3" mnemonicParsing="false" onAction="#btnShowDetails" text="Détails">
                            <VBox.margin>
                               <Insets bottom="10.0" />
                            </VBox.margin>
@@ -133,7 +133,7 @@
                               <Image url="@../../../../../../../../../../tmp/wmoicon_01d@2x.png" />
                            </image>
                         </ImageView>
-                        <Button mnemonicParsing="false" text="Détails">
+                        <Button id="4" mnemonicParsing="false" onAction="#btnShowDetails" text="Détails">
                            <VBox.margin>
                               <Insets bottom="10.0" />
                            </VBox.margin>
@@ -165,7 +165,7 @@
                               <Image url="@../../../../../../../../../../tmp/wmoicon_01d@2x.png" />
                            </image>
                         </ImageView>
-                        <Button mnemonicParsing="false" text="Détails">
+                        <Button id="5" mnemonicParsing="false" onAction="#btnShowDetails" text="Détails">
                            <VBox.margin>
                               <Insets bottom="10.0" />
                            </VBox.margin>
@@ -197,7 +197,7 @@
                               <Image url="@../../../../../../../../../../tmp/wmoicon_01d@2x.png" />
                            </image>
                         </ImageView>
-                        <Button mnemonicParsing="false" text="Détails">
+                        <Button id="6" mnemonicParsing="false" onAction="#btnShowDetails" text="Détails">
                            <VBox.margin>
                               <Insets bottom="10.0" />
                            </VBox.margin>
@@ -229,7 +229,7 @@
                               <Image url="@../../../../../../../../../../tmp/wmoicon_01d@2x.png" />
                            </image>
                         </ImageView>
-                        <Button mnemonicParsing="false" text="Détails">
+                        <Button id="7" mnemonicParsing="false" onAction="#btnShowDetails" text="Détails">
                            <VBox.margin>
                               <Insets bottom="12.0" />
                            </VBox.margin>

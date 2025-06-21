@@ -1,11 +1,14 @@
 package com.weatherreport.controller;
 
+import com.weatherreport.App;
 import com.weatherreport.DAL.ForecastRepository;
 import com.weatherreport.DAL.Repository;
 import com.weatherreport.DAL.WeatherIconRepository;
+import com.weatherreport.model.ForecastDay;
 import com.weatherreport.model.ForecastDaySum;
 import com.weatherreport.model.Location;
 import com.weatherreport.model.WeatherIcon;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.TextStyle;
@@ -13,8 +16,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -57,7 +62,10 @@ public class SummaryController {
     
     private List<ForecastDaySum> forecastDaySums;
     
+    private Location location;
+    
     public void initialize(Location location) {
+        this.location = location; 
         forecastRepo = new ForecastRepository(Repository.getInstance());
         weatherIconRepo = new WeatherIconRepository(Repository.getInstance());
         forecastDaySums = forecastRepo.getForecastDaySum(location, LocalDate.now(), LocalDate.now().plusDays(6));
@@ -79,8 +87,7 @@ public class SummaryController {
                     initLabelValue(label, i);
                 } else if(node instanceof ImageView) {
                     initImageViews(vbox, i);
-                }
-                
+                }   
             }
         }
     }
@@ -114,5 +121,16 @@ public class SummaryController {
                 imageView.setImage(icon.getImage());
             }
         }
-    }   
+    }
+    
+    @FXML
+    void btnShowDetails(ActionEvent event) throws IOException {
+        Button button = (Button)event.getSource();
+        String id = button.getId();
+        ForecastDaySum sum = forecastDaySums.get(Integer.parseInt(id) - 1);
+        LocalDate date = sum.getSunrise().toLocalDate();
+        App.setRoot("forecast");
+        ForecastController controller = App.fxmlLoader.<ForecastController>getController();
+        controller.initialize(location, date);
+    }
 }

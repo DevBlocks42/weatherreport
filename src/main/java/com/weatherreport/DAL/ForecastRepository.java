@@ -76,7 +76,7 @@ public class ForecastRepository {
     public List<ForecastDaySum> getForecastDaySum(Location location, LocalDate startDate, LocalDate endDate) {
         List<ForecastDaySum> sums = new ArrayList<>();
         try {
-            HttpEntityResponse response = apiClient.sendGetRequest(apiClient.getOpenmeteoApiURL(), forecastURI + "?latitude=" + location.getLatitude() + "&longitude=" + location.getLongitude() + "&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset&timezone=auto&start_date=" + startDate.toString() + "&end_date=" + endDate.toString());
+            HttpEntityResponse response = apiClient.sendGetRequest(apiClient.getOpenmeteoApiURL(), forecastURI + "?latitude=" + location.getLatitude() + "&longitude=" + location.getLongitude() + "&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset&timezone=auto"); //&start_date=" + startDate.toString() /*+ "&end_date=" + endDate.toString()*/);
             String textResponse = response.getContent();
             JSONObject root = new JSONObject(textResponse);
             JSONObject daily = (JSONObject)root.get("daily");
