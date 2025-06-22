@@ -277,9 +277,9 @@ public class ForecastController {
     @FXML
     void returnToPrimary(ActionEvent event) {
         try {
-            App.setRoot("primary");
-            PrimaryController controller = App.fxmlLoader.<PrimaryController>getController();
-            controller.initialize();
+            App.setRoot("summary");
+            SummaryController controller = App.fxmlLoader.<SummaryController>getController();
+            controller.initialize(location);
         } catch(IOException ex) {
             ex.printStackTrace();
         }

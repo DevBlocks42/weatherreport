@@ -133,4 +133,15 @@ public class SummaryController {
         ForecastController controller = App.fxmlLoader.<ForecastController>getController();
         controller.initialize(location, date);
     }
+    
+    @FXML
+    void onReturnButtonClicked(ActionEvent event) {
+        try {
+            App.setRoot("primary");
+            PrimaryController controller = App.fxmlLoader.<PrimaryController>getController();
+            controller.initialize();
+        } catch(IOException ex) {
+            ex.printStackTrace();
+        }
+    }
 }
