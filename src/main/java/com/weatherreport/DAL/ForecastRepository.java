@@ -21,10 +21,15 @@ import org.json.JSONObject;
  * @author DevBlocks42
  */
 public class ForecastRepository {
-    
+    /**
+     * Instance d'ApiClient
+     */
     private ApiClient apiClient;
     private final String forecastURI = "/forecast";
-    
+    /**
+     * Constructeur
+     * @param repository 
+     */
     public ForecastRepository(Repository repository) {
         apiClient = repository.getApiClient();
     }
@@ -32,7 +37,7 @@ public class ForecastRepository {
     /**
      * Retouurne un ForecastDay du lieu spécifié en paramètre
      * @param location
-     * @return un ForecastDay
+     * @return ForecastDay forecastDay
      */
     public ForecastDay getCurrentForecast(Location location, LocalDate date) {
         ForecastDay forecast = new ForecastDay();
@@ -72,7 +77,13 @@ public class ForecastRepository {
         }
         return forecast;
     }
-    
+    /**
+     * Retourne une liste de ForecastDaySum pour le lieu et entre la plage de dates saisies en paramètres
+     * @param location
+     * @param startDate
+     * @param endDate
+     * @return List<ForecastDaySum> sums
+     */
     public List<ForecastDaySum> getForecastDaySum(Location location, LocalDate startDate, LocalDate endDate) {
         List<ForecastDaySum> sums = new ArrayList<>();
         try {

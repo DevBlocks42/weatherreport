@@ -63,7 +63,11 @@ public class ForecastController {
     
     @FXML
     private Button btnBack;
-    
+    /**
+     * Initialise les objets graphiques de la vue
+     * @param location
+     * @param date 
+     */
     public void initialize(Location location, LocalDate date) {
         this.location = location; 
         this.forecastDay = date;
@@ -74,7 +78,9 @@ public class ForecastController {
         initializeCharts();
         initializeTable();
     }
-    
+    /**
+     * Initialise la TableView de la météo heure par heure
+     */
     private void initializeTable() {
         //Heures
         TableColumn<ForecastRow, LocalTime> dailyClockColumn = new TableColumn("Heure");
@@ -167,7 +173,9 @@ public class ForecastController {
         lineChart.setVisible(false);
         return lineChart;
     }
-    
+    /**
+     * Initialise les diagrammes des différentes données météo heures par heures
+     */
     private void initializeCharts() {
         //Température
         int maxTemp = (int)(forecast.getMaxTemperature() + 1);
@@ -206,7 +214,10 @@ public class ForecastController {
         cloudCoverChart = initChart(xCoverAxis, yCoverAxis, "Heure", "Couverture nuageuse (%)", forecast.getCloudCover());
         cloudCoverChart.setId("cloudCoverChart");
     }
-    
+    /**
+     * Méthode événementielle de gestion de changement de graphe
+     * @param event 
+     */
     @FXML
     void showGraph(ActionEvent event) {
         MenuItem item = (MenuItem)event.getSource();
@@ -279,7 +290,10 @@ public class ForecastController {
             }
         }
     }
-    
+    /**
+     * Méthode événementielle de gestion du clic sur le bouton de retour
+     * @param event 
+     */
     @FXML
     void returnToPrimary(ActionEvent event) {
         try {

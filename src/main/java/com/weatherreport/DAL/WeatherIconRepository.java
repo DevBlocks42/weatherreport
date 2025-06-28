@@ -16,7 +16,10 @@ import javafx.scene.image.Image;
 public class WeatherIconRepository {
     private ApiClient apiClient;
     private final String forecastURI = "/forecast";
-    
+    /**
+     * Constructeur
+     * @param repository 
+     */
     public WeatherIconRepository(Repository repository) {
         apiClient = repository.getApiClient();
     }

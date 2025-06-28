@@ -16,8 +16,14 @@ import org.json.JSONObject;
  * @author DevBlocks42 
  */
 public class LocationRepository {
+    /**
+     * Intsance d'ApiClient
+     */
     private ApiClient apiClient;
-    
+    /**
+     * Constructeur
+     * @param repository 
+     */
     public LocationRepository(Repository repository) {
         apiClient = repository.getApiClient();
     }

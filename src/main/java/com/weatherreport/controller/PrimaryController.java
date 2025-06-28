@@ -38,7 +38,9 @@ public class PrimaryController {
     private ApiClient apiClient;
     
     private LocationRepository locationRepo;
-    
+    /**
+     * Initialise les objets graphiques de la vue
+     */
     public void initialize() {
         tbvResults.getColumns().clear();
         locationRepo = new LocationRepository(Repository.getInstance());
@@ -75,7 +77,10 @@ public class PrimaryController {
         tbvResults.getColumns().addAll(nameCol, countryCol, elevationCol, latitudeCol, longitudeCol, admin1Col);
         tbvResults.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
     }
-    
+    /**
+     * Méthode événementielle de gestion du clic sur le bouton de recherche de lieu
+     * @param event 
+     */
     @FXML
     void onBtnSearchLocation_clicked(ActionEvent event) {
         if(txfSearchLocation.getText().length() > 3) {          
@@ -90,7 +95,10 @@ public class PrimaryController {
             alert.show();
         }
     }
-    
+    /**
+     * Méthode événementielle de gestion de la séléction du lieu dans la TableView
+     * @param event 
+     */
     @FXML
     void onLocationItemChanged(MouseEvent event) {
         if(event.getClickCount() == 2) {

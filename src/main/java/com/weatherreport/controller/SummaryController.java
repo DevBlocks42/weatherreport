@@ -61,7 +61,10 @@ public class SummaryController {
     private List<ForecastDaySum> forecastDaySums;
     
     private Location location;
-    
+    /**
+     * Initialise les objets graphiques de la vue
+     * @param location 
+     */
     public void initialize(Location location) {
         this.location = location; 
         forecastRepo = new ForecastRepository(Repository.getInstance());
@@ -89,7 +92,11 @@ public class SummaryController {
             }
         }
     }
-
+    /**
+     * Initialise les valeurs des labels avec les valeurs récupérées depuis le repository
+     * @param label
+     * @param anchorIndex 
+     */
     private void initLabelValue(Label label, int anchorIndex) {
         switch(label.getId()) {
             case "day":
@@ -109,7 +116,11 @@ public class SummaryController {
                 break;
             }
     }
-    
+    /**
+     * Initialise les images des icônes météo
+     * @param vbox
+     * @param anchorIndex 
+     */
     private void initImageViews(VBox vbox, int anchorIndex) {
         WeatherIcon icon = weatherIconRepo.getWeatherIcon(forecastDaySums.get(anchorIndex).getWeatherCode());
         ObservableList<Node> nodes = vbox.getChildren();
@@ -120,7 +131,11 @@ public class SummaryController {
             }
         }
     }
-    
+    /**
+     * Méthode événementielle de gestion du clic sur le bouton de consultation météo heure par heure
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     void btnShowDetails(ActionEvent event) throws IOException {
         Button button = (Button)event.getSource();
@@ -131,7 +146,10 @@ public class SummaryController {
         ForecastController controller = App.fxmlLoader.<ForecastController>getController();
         controller.initialize(location, date);
     }
-    
+    /**
+     * Méthode événementielle de gestion du clic sur le bouton retour
+     * @param event 
+     */
     @FXML
     void onReturnButtonClicked(ActionEvent event) {
         try {

@@ -12,22 +12,39 @@ import org.apache.hc.core5.http.io.entity.EntityUtils;
  * @author DevBlocks42
  */
 public class ApiClient {
+    /**
+     * Url de l'API geocoding
+     */
     private final String geocodingApiURL = PropertiesReader.getProperty("GEOCODING_API_URL");
+    /**
+     * Url de l'API open-meteo
+     */
     private final String openmeteoApiURL = PropertiesReader.getProperty("OPENMETEO_API_URL");
+    /**
+     * Url de l'API openweathermap
+     */
     private final String openweatherApiURL = PropertiesReader.getProperty("OPENWEATHER_API_URL");
+    /**
+     * Client http
+     */
     private HttpClient httpClient;
-    
+
+    /**
+     * Constructeur
+     */
     public ApiClient() {
         httpClient = HttpClients.createDefault();
     }
     
-    
+    /**
+     * Construit l'URL de la requête
+     * @return HttpGet request
+     */
     private HttpGet configureGetRequest(String apiURL, String URI) {
         HttpGet request = new HttpGet(apiURL + URI);
         request.addHeader("accept", "*/*");
         return request;
     }
-    
     /**
      * Envoie une requête HTTP GET à l'adresse spécifiée
      * @param apiURL URL de l'API
@@ -42,7 +59,13 @@ public class ApiClient {
         });
         return entityResponse;
     }
-    
+    /**
+     * Envoie une requête HTTP GET à l'adresse spécifiée
+     * @param apiURL URL de l'API
+     * @param URI Ressource/route à intérroger
+     * @return une HttpBytesEntityResponse correspondant à la réponse reçue
+     * @throws IOException 
+     */
     public HttpBytesEntityResponse sendGetRequestToBytes(String apiURL, String URI) throws IOException {
         HttpGet request = configureGetRequest(apiURL, URI);
         HttpBytesEntityResponse entityResponse = httpClient.execute(request, response -> {
@@ -50,17 +73,25 @@ public class ApiClient {
         });
         return entityResponse;
     }
-    
+    /**
+     * Retourne l'url vers l'api geocoding
+     * @return String geocodingApiURL
+     */
     public final String getGeocodingApiURL() {
         return geocodingApiURL;
     }
-    
+    /**
+     * Retourne l'url vers l'api open-meteo
+     * @return String openmeteoApiUrl
+     */
     public final String getOpenmeteoApiURL() {
         return openmeteoApiURL;
     }
-    
+    /**
+     * Retourne l'url vers l'api openweathermap
+     * @return String openwweatherApiUrl
+     */
     public final String getOpenweatherApiURL() {
         return openweatherApiURL;
     }
-    
 }
