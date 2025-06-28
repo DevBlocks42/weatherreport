@@ -41,16 +41,33 @@ public class ForecastControllerIT extends ApplicationTest {
     public void testChartSwitch(FxRobot robot) throws Exception {
         setCurrentView(robot);
         WaitForAsyncUtils.waitForFxEvents();
-       
-        System.out.println(robot.lookup("#mnbShowGraphs").query().isDisabled());
-        //robot.clickOn("#miTemp");
-    }
-    
-    @Test
-    public void testTableView(FxRobot robot) throws Exception {
-        setCurrentView(robot);
         robot.clickOn("Détails");
-        verifyThat("#lblTitle", isVisible());
+        WaitForAsyncUtils.waitForFxEvents();
+        robot.clickOn("#mnbShowGraphs");
+        robot.clickOn("#miTemp");
+        WaitForAsyncUtils.waitForFxEvents();
+        verifyThat(robot.lookup("#tempChart"), isVisible());
+        robot.sleep(2000);
+        WaitForAsyncUtils.waitForFxEvents();
+        robot.clickOn("#mnbShowGraphs");
+        robot.clickOn("#miAppTemp");
+        verifyThat(robot.lookup("#appTempChart"), isVisible());
+        WaitForAsyncUtils.waitForFxEvents();
+        robot.clickOn("#mnbShowGraphs");
+        robot.clickOn("#miWindSpeed");
+        verifyThat(robot.lookup("#windSpeedChart"), isVisible());
+        WaitForAsyncUtils.waitForFxEvents();
+        robot.clickOn("#mnbShowGraphs");
+        robot.clickOn("#miRain");
+        verifyThat(robot.lookup("#rainChart"), isVisible());
+        WaitForAsyncUtils.waitForFxEvents();
+        robot.clickOn("#mnbShowGraphs");
+        robot.clickOn("#miRainProbs");
+        verifyThat(robot.lookup("#rainProbsChart"), isVisible());
+        WaitForAsyncUtils.waitForFxEvents();
+        robot.clickOn("#mnbShowGraphs");
+        robot.clickOn("#miCloudCover");
+        verifyThat(robot.lookup("#cloudCoverChart"), isVisible());
+        robot.sleep(3000);
     }
-    
 }

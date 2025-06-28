@@ -174,31 +174,37 @@ public class ForecastController {
         NumberAxis xTempAxis = new NumberAxis(0, 23.59, 1);
         NumberAxis yTempAxis = new NumberAxis(0, maxTemp, 5);
         temperatureChart = initChart(xTempAxis, yTempAxis, "Heure", "Température (°C)", forecast.getTemperatures());
+        temperatureChart.setId("tempChart");
         //Ressenti
         int maxAppTemp = (int)(forecast.getMaxApparentTemperature() + 1);
         NumberAxis xAppTempAxis = new NumberAxis(0, 23.59, 1);
         NumberAxis yAppTempAxis = new NumberAxis(0, maxAppTemp, 5);
         apparentTemperatureChart = initChart(xAppTempAxis, yAppTempAxis, "Heure", "Température ressentie (°C)", forecast.getApparentTemperatures());
+        apparentTemperatureChart.setId("appTempChart");
         //Vitesse du vent
         int maxWindSpeed = (int)(forecast.getMaxWindSpeed() + 1);
         NumberAxis xWindSpeedAxis = new NumberAxis(0, 23.59, 1);
         NumberAxis yWindSpeedAxis = new NumberAxis(0, maxWindSpeed, 10);
         windSpeedChart = initChart(xWindSpeedAxis, yWindSpeedAxis, "Heure", "Vitesse du vent (km/h)", forecast.getWindSpeed10m());
+        windSpeedChart.setId("windSpeedChart");
         //Précipitations
         int maxRain = (int)(forecast.getMaxRain() + 1);
         NumberAxis xRainAxis = new NumberAxis(0, 23.59, 1);
         NumberAxis yRainAxis = new NumberAxis(0, maxRain, 5);
         rainChart = initChart(xRainAxis, yRainAxis, "Heure", "Précipitations (mm)", forecast.getRain());
+        rainChart.setId("rainChart");
         //Probabilité de pluie 
         int maxProbs = forecast.getMaxPrecipitationProbs();
         NumberAxis xProbsAxis = new NumberAxis(0, 23.59, 1);
         NumberAxis yProbsAxis = new NumberAxis(0, maxProbs, 5);
         rainProbsChart = initChart(xProbsAxis, yProbsAxis, "Heure", "Probabilités de pluie (%)", forecast.getPrecipitationProbs());
+        rainProbsChart.setId("rainProbsChart");
         //Couverture nuageuse
         int maxCover = forecast.getMaxCloudCover();
         NumberAxis xCoverAxis = new NumberAxis(0, 23.59, 1);
         NumberAxis yCoverAxis = new NumberAxis(0, maxCover, 5);
         cloudCoverChart = initChart(xCoverAxis, yCoverAxis, "Heure", "Couverture nuageuse (%)", forecast.getCloudCover());
+        cloudCoverChart.setId("cloudCoverChart");
     }
     
     @FXML
