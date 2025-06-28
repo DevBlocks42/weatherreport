@@ -22,6 +22,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Paint;
 
 /**
  * Contrôleur de la fenêtre de synthèse météo hebdomadaire
@@ -85,6 +86,7 @@ public class SummaryController {
             for(Node node : vbox.getChildren()) {
                 if(node instanceof Label) {
                     Label label = (Label) node;
+                    AnchorPane.setLeftAnchor(vbox, 5.0); //Marge à gauche
                     initLabelValue(label, i);
                 } else if(node instanceof ImageView) {
                     initImageViews(vbox, i);
