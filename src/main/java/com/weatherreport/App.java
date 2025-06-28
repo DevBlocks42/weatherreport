@@ -7,13 +7,18 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
 /**
- * JavaFX App
+ * Point d'entré du programme
+ * @author devblocks42
  */
 public class App extends Application {
-
+    /**
+     * Scene Node de la vue actuelle
+     */
     private static Scene scene;
+    /**
+     * Chargeur de vue fxml
+     */
     public static FXMLLoader fxmlLoader = new FXMLLoader();
     
     @Override

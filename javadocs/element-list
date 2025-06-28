@@ -1,0 +1,7 @@
+module:com.weatherreport
+com.weatherreport
+com.weatherreport.controller
+com.weatherreport.DAL
+com.weatherreport.http
+com.weatherreport.model
+com.weatherreport.utils

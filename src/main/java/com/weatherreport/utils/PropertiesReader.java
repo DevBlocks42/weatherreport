@@ -6,7 +6,7 @@ import java.util.Properties;
 
 /**
  * Classe auxilliaire pour la lecture des propriétés dans le fichier de configuration
- * @author DevBlocks42 <devblocks42 at keemail.me>
+ * @author DevBlocks42 devblocks42 at keemail.me
  */
 public class PropertiesReader {
     private static final String FILE_PATH = "app.properties";

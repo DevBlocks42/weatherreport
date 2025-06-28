@@ -50,7 +50,7 @@ public class ApiClient {
      * @param apiURL URL de l'API
      * @param URI Ressource/route à intérroger
      * @return une HttpEntityResponse correspondant à la réponse reçue
-     * @throws IOException 
+     * @throws IOException exception
      */
     public HttpEntityResponse sendGetRequest(String apiURL, String URI) throws IOException {
         HttpGet request = configureGetRequest(apiURL, URI);
@@ -64,7 +64,7 @@ public class ApiClient {
      * @param apiURL URL de l'API
      * @param URI Ressource/route à intérroger
      * @return une HttpBytesEntityResponse correspondant à la réponse reçue
-     * @throws IOException 
+     * @throws IOException exception 
      */
     public HttpBytesEntityResponse sendGetRequestToBytes(String apiURL, String URI) throws IOException {
         HttpGet request = configureGetRequest(apiURL, URI);

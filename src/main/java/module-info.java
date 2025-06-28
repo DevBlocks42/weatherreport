@@ -9,7 +9,14 @@ module com.weatherreport {
 
     opens com.weatherreport to javafx.fxml, org.apache.httpcomponents.client5.httpclient5, org.apache.httpcomponents.core5.httpcore5;
     opens com.weatherreport.controller to javafx.fxml;
+    opens com.weatherreport.DAL;
+    opens com.weatherreport.model;
+    opens com.weatherreport.utils;
+    opens com.weatherreport.http;
     exports com.weatherreport;
     exports com.weatherreport.controller;
     exports com.weatherreport.http;
+    exports com.weatherreport.DAL;
+    exports com.weatherreport.model;
+    exports com.weatherreport.utils;
 }
